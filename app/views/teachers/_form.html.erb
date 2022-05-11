@@ -1,0 +1,57 @@
+<%= form_with(model: teacher) do |form| %>
+  <% if teacher.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
+
+      <ul>
+        <% teacher.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :staff_id, style: "display: block" %>
+    <%= form.text_field :staff_id %>
+  </div>
+
+  <div>
+    <%= form.label :duty_time_start, style: "display: block" %>
+    <%= form.time_field :duty_time_start %>
+  </div>
+
+  <div>
+    <%= form.label :duty_time_end, style: "display: block" %>
+    <%= form.time_field :duty_time_end %>
+  </div>
+
+  <div>
+    <%= form.label :speciality, style: "display: block" %>
+    <%= form.text_field :speciality %>
+  </div>
+
+  <div>
+    <%= form.label :education_degree, style: "display: block" %>
+    <%= form.text_field :education_degree %>
+  </div>
+
+  <div>
+    <%= form.label :expirence_in_years, style: "display: block" %>
+    <%= form.number_field :expirence_in_years %>
+  </div>
+
+  <div>
+    <%= form.label :hire_by, style: "display: block" %>
+    <%= form.text_field :hire_by %>
+  </div>
+
+  <div>
+    <%= form.label :meta, style: "display: block" %>
+    <%= form.text_field :meta %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

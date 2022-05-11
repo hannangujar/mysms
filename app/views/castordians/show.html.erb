@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @castordian %>
+
+<div>
+  <%= link_to "Edit this castordian", edit_castordian_path(@castordian) %> |
+  <%= link_to "Back to castordians", castordians_path %>
+
+  <%= button_to "Destroy this castordian", @castordian, method: :delete %>
+</div>

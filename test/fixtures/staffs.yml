@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  contact: one
+  address: one
+  staff_type: 1
+  salary: 1
+  identity_card_number: 1
+  father_name: MyString
+  place_of_birth: MyString
+  date_of_hiring: 2022-05-11
+  year_of_service: 1
+  meta: 
+
+two:
+  user: two
+  contact: two
+  address: two
+  staff_type: 1
+  salary: 1
+  identity_card_number: 1
+  father_name: MyString
+  place_of_birth: MyString
+  date_of_hiring: 2022-05-11
+  year_of_service: 1
+  meta: 

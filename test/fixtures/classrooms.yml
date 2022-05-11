@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  teacher: one
+  grade: MyString
+  start_date: 2022-05-11 05:58:40
+  end_date: 2022-05-11 05:58:40
+  section: MyString
+  status: false
+  remarks: MyText
+  meta: 
+
+two:
+  teacher: two
+  grade: MyString
+  start_date: 2022-05-11 05:58:40
+  end_date: 2022-05-11 05:58:40
+  section: MyString
+  status: false
+  remarks: MyText
+  meta: 

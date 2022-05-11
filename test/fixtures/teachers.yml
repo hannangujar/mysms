@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  staff: one
+  duty_time_start: 2022-05-11 05:28:39
+  duty_time_end: 2022-05-11 05:28:39
+  speciality: MyString
+  education_degree: MyString
+  expirence_in_years: 1
+  hire_by: MyString
+  meta: 
+
+two:
+  staff: two
+  duty_time_start: 2022-05-11 05:28:39
+  duty_time_end: 2022-05-11 05:28:39
+  speciality: MyString
+  education_degree: MyString
+  expirence_in_years: 1
+  hire_by: MyString
+  meta: 

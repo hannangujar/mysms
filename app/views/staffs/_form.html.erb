@@ -1,0 +1,72 @@
+<%= form_with(model: staff) do |form| %>
+  <% if staff.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(staff.errors.count, "error") %> prohibited this staff from being saved:</h2>
+
+      <ul>
+        <% staff.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :contact_id, style: "display: block" %>
+    <%= form.text_field :contact_id %>
+  </div>
+
+  <div>
+    <%= form.label :address_id, style: "display: block" %>
+    <%= form.text_field :address_id %>
+  </div>
+
+  <div>
+    <%= form.label :staff_type, style: "display: block" %>
+     <%= form.select :address_type, Staff.staff_types.keys %>
+  </div>
+
+  <div>
+    <%= form.label :salary, style: "display: block" %>
+    <%= form.number_field :salary %>
+  </div>
+
+  <div>
+    <%= form.label :identity_card_number, style: "display: block" %>
+    <%= form.number_field :identity_card_number %>
+  </div>
+
+  <div>
+    <%= form.label :father_name, style: "display: block" %>
+    <%= form.text_field :father_name %>
+  </div>
+
+  <div>
+    <%= form.label :place_of_birth, style: "display: block" %>
+    <%= form.text_field :place_of_birth %>
+  </div>
+
+  <div>
+    <%= form.label :date_of_hiring, style: "display: block" %>
+    <%= form.date_field :date_of_hiring %>
+  </div>
+
+  <div>
+    <%= form.label :year_of_service, style: "display: block" %>
+    <%= form.number_field :year_of_service %>
+  </div>
+
+  <div>
+    <%= form.label :meta, style: "display: block" %>
+    <%= form.text_field :meta %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

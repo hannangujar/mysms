@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Castordians</h1>
+
+<div id="castordians">
+  <% @castordians.each do |castordian| %>
+    <%= render castordian %>
+    <p>
+      <%= link_to "Show this castordian", castordian %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New castordian", new_castordian_path %>
