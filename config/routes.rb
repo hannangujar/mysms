@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { confirmations: 'confirmations' }
+
   resources :students
   resources :classrooms
   resources :teachers
@@ -11,7 +12,11 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/about'
   get 'home/update'
-  resources :users
+  resources :users, only: [:index, :show, :update, :destroy] do
+    member do
+      patch :ban 
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

@@ -14,6 +14,20 @@ class UsersController < ApplicationController
     
   end
 
+  def access_locked?
+    !!locked_at && !lock_expired?
+  end
+  
+  def ban
+     @user = User.find(params[:id])
+    if @user.access_locked?
+       @user.unlock_access!
+    else
+      @user.lock_access!
+    end
+    redirect_to @user, notice: "User banned"
+  end
+
   # GET /users/new
   def new
     @user = User.new
@@ -64,7 +78,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+       @user = User.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
