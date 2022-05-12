@@ -1,5 +1,9 @@
 <div id="<%= dom_id user %>">
   <p>
+    <strong>Id:</strong>
+    <%= user.id %>
+  </p>
+  <p>
     <strong>Email:</strong>
     <%= user.email %>
   </p>
@@ -28,5 +32,11 @@
     <strong>Role:</strong>
     <%= user.role %>
   </p>
+  <p>
+    <strong>Joining Date:</strong>
+    <%= user.created_at %>
+  </p>
 
 </div>
+
+

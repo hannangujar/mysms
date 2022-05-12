@@ -3,11 +3,15 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    @users = User.all
+    #@users = User.all
+    @users = User.where(role: "Student")
+    @userstaff = User.where(role: "Staff")
+    @userparents = User.where(role: "Parents")
   end
 
   # GET /users/1 or /users/1.json
   def show
+    
   end
 
   # GET /users/new
