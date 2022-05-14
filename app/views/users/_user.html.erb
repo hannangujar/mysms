@@ -36,8 +36,14 @@
     <strong>Joining Date:</strong>
     <%= user.created_at %>
   </p>
+  <p>
+    <strong>Email Confirmed:</strong>
+      <%= user.confirmed? %> 
+  </p>
+  <p>
+    <strong>User Ban Status</strong>
+      <%= link_to ban_status(user), ban_user_path(user), method: :patch %>
+  </p>
 
 </div>
-
-
 

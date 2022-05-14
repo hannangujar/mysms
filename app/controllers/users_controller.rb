@@ -9,23 +9,19 @@ class UsersController < ApplicationController
     @userparents = User.where(role: "Parents")
   end
 
-  # GET /users/1 or /users/1.json
-  def show
-    
-  end
-
-  def access_locked?
-    !!locked_at && !lock_expired?
-  end
-  
   def ban
-     @user = User.find(params[:id])
+    @user = User.find(params[:id])
     if @user.access_locked?
        @user.unlock_access!
     else
-      @user.lock_access!
+       @user.unlock_access!
     end
-    redirect_to @user, notice: "User banned"
+    rediect_to  users_path, notice: "User access locked: #{@user.access_locked?}"
+  end
+
+  # GET /users/1 or /users/1.json
+  def show
+    
   end
 
   # GET /users/new
@@ -78,7 +74,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-       @user = User.find(params[:id])
+      @user = User.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
